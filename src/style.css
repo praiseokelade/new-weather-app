@@ -36,6 +36,12 @@ body {
   font-weight: bold;
 }
 
+.search-form-button:hover {
+  color: rgb(224, 185, 133);
+  background-color: #fff;
+  transition: all ease-in-out 200ms;
+}
+
 .weather-app-details {
   display: flex;
   justify-content: space-between;

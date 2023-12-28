@@ -15,12 +15,13 @@
   <body>
     <div class="weather-app">
       <header>
-        <form class="search-form">
+        <form class="search-form" id="search-form">
           <input
             type="search"
             placeholder="Enter a city..."
             required
             class="search-form-input"
+            id="search-form-input"
           />
           <input type="submit" value="Search" class="search-form-button" />
         </form>
@@ -28,7 +29,7 @@
       <main>
         <div class="weather-app-details">
           <div>
-            <h1 class="city-name">Paris</h1>
+            <h1 class="city-name" id="city">Paris</h1>
             <p>
               Thursday 11:26, overcast clouds
               <br />
@@ -51,5 +52,6 @@
         and hosted on <a href="https://pto-weather-app.netlify.app">Netlify</a>
       </footer>
     </div>
+    <script src="src/app.js"></script>
   </body>
 </html>
