@@ -1,10 +1,48 @@
 function updateTemperature(response) {
+  console.log(response.data);
+
   let temperature = document.querySelector("#temp");
   let currentTemp = response.data.temperature.current;
-  temperature.innerHTML = Math.round(currentTemp);
-
   let cityName = document.querySelector("#city");
+  let description = document.querySelector("#description");
+  let humidity = document.querySelector("#humidity");
+  let windSpeed = document.querySelector("#wind-speed");
+  let time = document.querySelector("#time");
+  let date = new Date(response.data.time * 1000);
+
+  temperature.innerHTML = Math.round(currentTemp);
   cityName.innerHTML = response.data.city;
+  description.innerHTML = response.data.condition.description;
+  humidity.innerHTML = `${response.data.temperature.humidity}%`;
+  windSpeed.innerHTML = `${response.data.wind.speed}km/h`;
+  time.innerHTML = formatDate(date);
+}
+
+function formatDate(date) {
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+
+  let days = [
+    `Sunday`,
+    `Monday`,
+    `Tuesday`,
+    `Wednesday`,
+    `Thursday`,
+    `Friday`,
+    `Saturday`,
+  ];
+
+  let day = days[date.getDay()];
+
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  if (hours < 0) {
+    hours = `0${hours}`;
+  }
+
+  return `${day} ${hours}:${minutes}`;
 }
 
 function searchCity(city) {
@@ -23,3 +61,5 @@ function replaceCity(event) {
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", replaceCity);
+
+searchCity("Manchester");
