@@ -79,6 +79,17 @@ body {
   font-size: 30px;
 }
 
+.weather-forecast-date {
+  background: rgb(245, 209, 162);
+  border-radius: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+.weather-forecast-max-temp {
+    font-weight: bold;
+}
+
 footer {
   font-size: 14px;
   text-align: center;
