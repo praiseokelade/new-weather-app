@@ -79,15 +79,20 @@ body {
   font-size: 30px;
 }
 
+.weather-forecast {
+  display: flex;
+  justify-content: space-around;
+}
+
 .weather-forecast-date {
   background: rgb(245, 209, 162);
   border-radius: 20px;
-  padding: 10px;
+  padding: 20px;
   text-align: center;
 }
 
 .weather-forecast-max-temp {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 footer {

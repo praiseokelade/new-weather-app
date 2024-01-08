@@ -66,3 +66,24 @@ let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", replaceCity);
 
 searchCity("Manchester");
+
+function displayForecast() {
+  let forecast = document.querySelector("#forecast");
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml = forecastHtml + `<div class="weather-forecast-date">
+            <div class="weather-forecast-day">${day}</div>
+            <div class="weather-forecast-icon">☁️</div>
+            <div class="weather-forecast-temperatures">
+              <span class="weather-forecast-max-temp">12°</span>
+              <span class="weather-forecast-min-temp">6°</span>
+            </div>
+          </div>`;
+  });
+
+  forecast.innerHTML = forecastHtml
+}
+
+displayForecast();
