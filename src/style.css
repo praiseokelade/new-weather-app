@@ -85,10 +85,19 @@ body {
 }
 
 .weather-forecast-date {
-  background: rgb(245, 209, 162);
   border-radius: 20px;
-  padding: 20px;
+  padding: 15px;
   text-align: center;
+  margin: 0 10px 10px 10px;
+  transition: all 200ms ease-in-out;
+}
+
+.weather-forecast-date:hover {
+  background: rgb(245, 209, 162);
+}
+
+.weather-forecast-icon {
+  width: 80%;
 }
 
 .weather-forecast-max-temp {
